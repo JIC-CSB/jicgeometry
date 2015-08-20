@@ -15,7 +15,6 @@
 import sys
 import os
 import shlex
-import jicgeometry
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -61,7 +60,7 @@ author = u'Tjelvar Olsson and Matthew Hartley'
 # built documents.
 #
 # The short X.Y version.
-version = jicgeometry.__version__
+version = "0.4.0"
 # The full version, including alpha/beta/rc tags.
 release = version
 
