@@ -54,7 +54,7 @@ Points can also be treated as vectors.
 
 import math
 
-__version__ = "0.4.0"
+__version__ = "0.5.0"
 
 class Point2D(object):
     """Class representing a point in 2D space."""
