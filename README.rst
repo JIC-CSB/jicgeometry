@@ -5,7 +5,19 @@ JIC Geometry
    :target: http://badge.fury.io/py/jicgeometry
    :alt: PyPi package
 
-.. image:: https://readthedocs.org/projects/jicgeometry?version=latest
+.. image:: https://travis-ci.org/JIC-CSB/jicgeometry.svg?branch=master
+   :target: https://travis-ci.org/JIC-CSB/jicgeometry
+   :alt: Travis CI build status (Linux)
+
+.. image:: https://ci.appveyor.com/api/projects/status/skvp3sa9f5htpnkf?svg=true
+   :target: https://ci.appveyor.com/project/tjelvar-olsson/jicgeometry
+   :alt: AppVeyor CI build status (Windows)
+
+.. image:: http://codecov.io/github/JIC-CSB/jicgeometry/coverage.svg?branch=master
+   :target: http://codecov.io/github/JIC-CSB/jicgeometry?branch=master
+   :alt: Code Coverage
+
+.. image:: https://readthedocs.org/projects/jicgeometry/badge/?version=latest
    :target: https://readthedocs.org/projects/jicgeometry?badge=latest
    :alt: Documentation Status
 
