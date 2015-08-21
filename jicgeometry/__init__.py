@@ -31,8 +31,8 @@ Scalar multiplication is supported.
 >>> (p1 + p2) * 2
 <Point2D(x=6, y=8, dtype=int)>
 
-Scalar division uses true division converting and always results in a 2D point
-of ``dtype`` ``float``.
+Scalar division uses true division and as a result always returns a 2D point of
+``dtype`` ``float``.
 
 >>> p1 / 2
 <Point2D(x=1.50, y=0.00, dtype=float)>
