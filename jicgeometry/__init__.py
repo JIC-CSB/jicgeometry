@@ -31,10 +31,10 @@ Scalar multiplication is supported.
 >>> (p1 + p2) * 2
 <Point2D(x=6, y=8, dtype=int)>
 
-Scalar division requires the denominator to be of type ``float``.
-Note that the ``dtype`` of the 2D point that is returned.
+Scalar division uses true division converting and always results in a 2D point
+of ``dtype`` ``float``.
 
->>> p1 / 2.0
+>>> p1 / 2
 <Point2D(x=1.50, y=0.00, dtype=float)>
 
 It is possible to calculate the distance between two points.
@@ -129,9 +129,10 @@ class Point2D(object):
         return Point2D( self.x * other, self.y * other)
 
     def __div__(self, other):
-        if isinstance(other, int):
-            raise(NotImplementedError("Integer division not yet implemented"))
-        return self * (1/other)
+        return self * (1/float(other))
+
+    def __truediv__(self, other):
+        return self.__div__(other)
 
     def __len__(self):
         return 2

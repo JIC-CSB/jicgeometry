@@ -104,8 +104,10 @@ class Point2DUnitTests(unittest.TestCase):
     def test_div_with_int(self):
         from jicgeometry import Point2D
         p = Point2D(2,3)
-        with self.assertRaises(NotImplementedError):
-            p/3
+        self.assertEqual(p.dtype, 'int')
+        new_p = p / 3
+        self.assertEqual(new_p.dtype, 'float')
+        self.assertEqual(new_p, Point2D(2/3.0,3/3.0))
 
     def test_div_with_float(self):
         from jicgeometry import Point2D
