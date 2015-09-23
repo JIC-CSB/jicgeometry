@@ -56,6 +56,7 @@ import math
 
 __version__ = "0.5.0"
 
+
 class Point2D(object):
     """Class representing a point in 2D space."""
 
@@ -77,7 +78,7 @@ class Point2D(object):
         # interpretation of the string "1" vs the interpretation of the string
         # "1.0".
         for c in (self.x, self.y):
-            if not ( isinstance(c, int) or isinstance(c, float) ):
+            if not (isinstance(c, int) or isinstance(c, float)):
                 raise(RuntimeError('x, y coords should be int or float'))
 
         if isinstance(self.x, int) and isinstance(self.y, int):
@@ -96,12 +97,12 @@ class Point2D(object):
     @property
     def magnitude(self):
         """Return the magnitude when treating the point as a vector."""
-        return math.sqrt( self.x * self.x + self.y * self.y )
+        return math.sqrt(self.x**2 + self.y**2)
 
     @property
     def unit_vector(self):
         """Return the unit vector."""
-        return Point2D( self.x / self.magnitude, self.y / self.magnitude )
+        return Point2D(self.x / self.magnitude, self.y / self.magnitude)
 
     def distance(self, other):
         """Return distance to the other point."""
@@ -112,21 +113,21 @@ class Point2D(object):
         s = "<Point2D(x={}, y={}, dtype={})>"
         if self.dtype == "float":
             s = "<Point2D(x={:.2f}, y={:.2f}, dtype={})>"
-        return s.format( self.x, self.y, self.dtype)
+        return s.format(self.x, self.y, self.dtype)
 
     def __eq__(self, other):
         if self.dtype != other.dtype:
-            return False 
+            return False
         return self.x == other.x and self.y == other.y
 
     def __add__(self, other):
-        return Point2D( self.x + other.x, self.y + other.y ) 
+        return Point2D(self.x + other.x, self.y + other.y)
 
     def __sub__(self, other):
-        return Point2D( self.x - other.x, self.y - other.y ) 
+        return Point2D(self.x - other.x, self.y - other.y)
 
     def __mul__(self, other):
-        return Point2D( self.x * other, self.y * other)
+        return Point2D(self.x * other, self.y * other)
 
     def __div__(self, other):
         return self * (1/float(other))
@@ -146,14 +147,14 @@ class Point2D(object):
             raise(IndexError())
 
     def __iter__(self):
-        return iter( [self.x, self.y] )
+        return iter([self.x, self.y])
 
     def astype(self, dtype):
         """Return a point of the specified dtype."""
         if dtype == "int":
-            return Point2D( int( round(self.x, 0) ), int( round(self.y, 0) ) )
+            return Point2D(int(round(self.x, 0)), int(round(self.y, 0)))
         elif dtype == "float":
-            return Point2D( float(self.x), float(self.y))
+            return Point2D(float(self.x), float(self.y))
         else:
             raise(RuntimeError("Invalid dtype: {}".format(dtype)))
 
@@ -181,12 +182,11 @@ class Point3D(object):
         # interpretation of the string "1" vs the interpretation of the string
         # "1.0".
         for c in (self.x, self.y, self.z):
-            if not ( isinstance(c, int) or isinstance(c, float) ):
+            if not (isinstance(c, int) or isinstance(c, float)):
                 raise(RuntimeError('x, y coords should be int or float'))
 
         if (isinstance(self.x, int)
-            and isinstance(self.y, int)
-            and isinstance(self.z, int)):
+                and isinstance(self.y, int) and isinstance(self.z, int)):
             self._dtype = "int"
         else:
             # At least one value is a float so promote both to float.
@@ -201,7 +201,7 @@ class Point3D(object):
         return self._dtype
 
     def __iter__(self):
-        return iter( [self.x, self.y, self.z] )
+        return iter([self.x, self.y, self.z])
 
     def __repr__(self):
         s = "<Point3D(x={}, y={}, z={}, dtype={})>"
@@ -211,19 +211,19 @@ class Point3D(object):
 
     def __eq__(self, other):
         if self.dtype != other.dtype:
-            return False 
+            return False
         return (self.x == other.x
                 and self.y == other.y
                 and self.z == other.z)
 
     def __add__(self, other):
-        return Point3D( self.x + other.x, self.y + other.y, self.z + other.z )
+        return Point3D(self.x + other.x, self.y + other.y, self.z + other.z)
 
     def __sub__(self, other):
-        return Point3D( self.x - other.x, self.y - other.y, self.z - other.z ) 
+        return Point3D(self.x - other.x, self.y - other.y, self.z - other.z)
 
     def __mul__(self, other):
-        return Point3D( self.x * other, self.y * other, self.z * other )
+        return Point3D(self.x * other, self.y * other, self.z * other)
 
     def __div__(self, other):
         return self * (1/float(other))
@@ -247,14 +247,14 @@ class Point3D(object):
     @property
     def magnitude(self):
         """Return the magnitude when treating the point as a vector."""
-        return math.sqrt( self.x**2 + self.y**2 + self.z**2  )
+        return math.sqrt(self.x**2 + self.y**2 + self.z**2)
 
     @property
     def unit_vector(self):
         """Return the unit vector."""
         return Point3D(self.x / self.magnitude,
                        self.y / self.magnitude,
-                       self.z / self.magnitude )
+                       self.z / self.magnitude)
 
     def distance(self, other):
         """Return distance to the other point."""
