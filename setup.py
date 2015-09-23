@@ -22,7 +22,7 @@ class NoseTestCommand(TestCommand):
         import nose
         nose.run_exit(argv=['nosetests'])
 
-version = "0.5.0"
+version = "0.6.0"
 readme = open('README.rst').read()
 
 setup(name='jicgeometry',

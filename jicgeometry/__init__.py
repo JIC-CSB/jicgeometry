@@ -1,7 +1,10 @@
 """Module for geometric operations.
 
-This module contains the :class:`jicgeometry.Point2D` class,
-which can be used to perform geometric operations in 2D space.
+The module contains two classes to perform geometric operations in 2D and 3D
+space:
+
+- :class:`jicgeometry.Point2D`
+- :class:`jicgeometry.Point3D`
 
 A 2D point can be generated using a pair of x, y coordinates.
 
@@ -54,7 +57,7 @@ Points can also be treated as vectors.
 
 import math
 
-__version__ = "0.5.0"
+__version__ = "0.6.0"
 
 
 class Point2D(object):
