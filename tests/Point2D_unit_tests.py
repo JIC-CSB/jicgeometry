@@ -58,14 +58,14 @@ class Point2DUnitTests(unittest.TestCase):
         
     def test_equal(self):
         from jicgeometry import Point2D
-        p1 = Point2D(1, 1)
-        p2 = Point2D(1, 1)
+        p1 = Point2D(1, 2)
+        p2 = Point2D(1, 2)
         self.assertTrue(p1 == p2) 
 
     def test_Point2D_of_different_dtypes_not_equal(self):
         from jicgeometry import Point2D
-        p1 = Point2D(1, 1)
-        p2 = Point2D(1.0, 1.0)
+        p1 = Point2D(1, 2)
+        p2 = Point2D(1.0, 2.0)
         self.assertFalse(p1 == p2) 
 
     def test_add(self):
@@ -125,7 +125,7 @@ class Point2DUnitTests(unittest.TestCase):
         self.assertEqual(p[0], 2)
         self.assertEqual(p[1], 3)
         with self.assertRaises(IndexError):
-            p[3]
+            p[2]
 
     def test_iter(self):
         from jicgeometry import Point2D
