@@ -7,7 +7,6 @@ try:
 except ImportError:
     pass
 
-import jicgeometry
 
 # Define the test runner.
 # See also:
@@ -23,17 +22,18 @@ class NoseTestCommand(TestCommand):
         import nose
         nose.run_exit(argv=['nosetests'])
 
+version = "0.5.0"
 readme = open('README.rst').read()
 
 setup(name='jicgeometry',
       packages=['jicgeometry'],
-      version=jicgeometry.__version__,
+      version=version,
       description='Basic Python geometry package with no external dependencies.',
       long_description=readme,
       author='Tjelvar Olsson',
       author_email = 'tjelvar.olsson@jic.ac.uk',
       url = 'https://github.com/JIC-CSB/jicgeometry',
-      download_url = 'https://github.com/JIC-CSB/jicgeometry/tarball/{}'.format(jicgeometry.__version__),
+      download_url = 'https://github.com/JIC-CSB/jicgeometry/tarball/{}'.format(version),
       license='MIT',
       classifiers=[
         "Development Status :: 3 - Alpha",
