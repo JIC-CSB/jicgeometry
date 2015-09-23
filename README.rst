@@ -70,3 +70,18 @@ Treat points as vectors::
     <Point2D(x=0.99, y=0.16, dtype=float)>
     >>> round(p1.magnitude, 4)
     6.0828
+
+
+History
+-------
+
+0.6.0
+^^^^^
+
+- Added Point3D class
+
+
+0.5.0
+^^^^^
+
+- Initial upload to PyPi
