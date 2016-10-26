@@ -23,7 +23,7 @@ JIC Geometry
 
 Python package for basic geometry operations.
 
-- Documentation: http://jicgeometry.readthedocs.org/en/latest/
+- Documentation: http://jicgeometry.readthedocs.io/en/latest/
 - GitHub: https://github.com/JIC-CSB/jicgeometry
 - PyPI: https://pypi.python.org/pypi/jicgeometry
 - Free software: MIT License
